@@ -4,10 +4,7 @@ export default function RoundedImg({image}) {
       <img className="relative top-[50px] right[150px]" src={image}/>
       <img className="relative top-[50px] right[150px]" src={image}/>
       <img className="relative top-[50px] right[150px]" src={image}/>
-      <img className="relative top-[50px] right[150px]" src={image}/>
-      <img className="relative top-[50px] right[150px]" src={image}/>
-      <img className="relative top-[50px] right[150px]" src={image}/>
-      <img className="relative top-[50px] right[150px]" src={image}/>
+      
     </div>
   );
 }

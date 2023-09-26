@@ -1,7 +1,7 @@
 import bgImage from "../../public/images/bgMangiare.png";
 import ButtonMangiare from "../components/buttons/ButtonMangiare";
 import CardWhyM from "../components/cards/CardWhyM";
-import RoundedImg from "../components/rounded/RoundedImg";
+import RoundedParrafo from "../components/rounded/RoundedParrafo";
 
 export default function Layout() {
   return (
@@ -57,17 +57,60 @@ export default function Layout() {
             />
           </article>
         </section>
-        
-        <section className=" text-[#fff] bg-[#7BB037] h-[1018px] relative" >
 
-          <h3 className="font-poppins font-bold text-[48px] text-center">¿Qué contiene tu kit de comida?</h3>
-          <p className="text-center font-poppins text-[25px] pb-[377px]">Lorem impsum aqui ira una descripción no tan larga ideas aqui</p>
-          <RoundedImg image="images/kitComida7.png"/>
+        {/* <section className=" text-[#fff] bg-[#7BB037] h-[1018px] relative">
+          <h3 className="font-poppins font-bold text-[48px] text-center">
+            ¿Qué contiene tu kit de comida?
+          </h3>
+          <p className="text-center font-poppins text-[25px] pb-[377px]">
+            Lorem impsum aqui ira una descripción no tan larga ideas aqui
+          </p>
+          <RoundedImg image="images/kitComida7.png" />
 
-          <img className="absolute bottom-0 left-[220px]" src="images/platoPrincipal.png" />
+          <img
+            className="absolute bottom-0 left-[220px]"
+            src="images/platoPrincipal.png"
+          />
+        </section> */}
 
+        <section className="h-auto sm:h-[645px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
+          <div className="h-[504px] container flex items-center justify-center bg-[#fff]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 ">
+              <article className=" w-[436px]">
+                <img
+                  src="images/cart.png"
+                  alt="Cart"
+                  className="w-full h-auto"
+                />
+              </article>
+
+              <article className="">
+                <h2
+                  className="
+                 text-[24px] font-bold font-poppins text-[#1B1713]"
+                >
+                  ¿Cómo llegará tu pedido?
+                </h2>
+                <RoundedParrafo
+                  img="images/number1.svg"
+                  text="Los envíos se entregan los días domingos por parte de nuestro personal."
+                />
+                <RoundedParrafo
+                  img="images/number2.svg"
+                  text="Los ingredientes se entregarán pre-cortados según la cantidad de porciones escogidas a la hora de comprar."
+                />
+                <RoundedParrafo
+                  img="images/number3.svg"
+                  text="Todos los ingredientes enviados estarán 100% frescos."
+                />
+                <RoundedParrafo
+                  img="images/number4.svg"
+                  text="Los envíos se entregan los días domingos por parte de nuestro personal."
+                />
+              </article>
+            </div>
+          </div>
         </section>
-        
       </main>
     </>
   );
