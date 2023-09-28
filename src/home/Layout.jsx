@@ -1,5 +1,7 @@
 import bgImage from "../../public/images/bgMangiare.png";
 import ButtonMangiare from "../components/buttons/ButtonMangiare";
+import ButtonMenuSemana from "../components/buttons/ButtonMenuSemana";
+import CardReceta from "../components/cards/CardReceta";
 import CardWhyM from "../components/cards/CardWhyM";
 import RoundedParrafo from "../components/rounded/RoundedParrafo";
 
@@ -73,21 +75,17 @@ export default function Layout() {
           />
         </section> */}
 
-        <section className="h-auto sm:h-[645px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
-          <div className="h-[504px] container flex items-center justify-center bg-[#fff]">
+        <section className="mx-auto h-[100%] sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
+          <div className="h-[665px] sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
-              <article className=" w-[436px]">
-                <img
-                  src="images/cart.png"
-                  alt="Cart"
-                  className="w-full h-auto"
-                />
+              <article className=" w-[436px] lg:grid-cols-[800px_2fr] flex items-center justify-center">
+                <img src="images/cart.png" alt="Cart" className="" />
               </article>
 
               <article className="">
                 <h2
                   className="
-                 text-[24px] font-bold font-poppins text-[#1B1713]"
+                  font-bold font-poppins text-[#1B1713] text-center text-[24px]"
                 >
                   ¿Cómo llegará tu pedido?
                 </h2>
@@ -109,6 +107,59 @@ export default function Layout() {
                 />
               </article>
             </div>
+          </div>
+        </section>
+
+        <section className="h-[720px] mx-auto container">
+          <div className="flex justify-center  ">
+            <h2 className="font-poppins font-bold text-[40px] text-[#161616]">
+              Recetas de la semana
+            </h2>
+          </div>
+
+          <div className="flex space-x-4 grid grid-cols-2 sm:grid-cols-4 mx-auto p-5">
+            <CardReceta
+              image="images/receta1.png"
+              subTittle="Ensalada de papines con pesto de cilantro"
+              icon="images/reloj.svg"
+              text="24 min"
+              textTwo="8 ingredientes"
+              iconTwo="images/bolsa.svg"
+            />
+
+            <div className="relative top-[-275px] sm:top-[175px]">
+              <CardReceta
+                image="images/receta2.png"
+                subTittle="Ensalada de papines con pesto de cilantro"
+                icon="images/reloj.svg"
+                text="24 min"
+                textTwo="8 ingredientes"
+                iconTwo="images/bolsa.svg"
+              />
+            </div>
+
+            <CardReceta
+              image="images/receta3.png"
+              subTittle="Ensalada de papines con pesto de cilantro"
+              icon="images/reloj.svg"
+              text="24 min"
+              textTwo="8 ingredientes"
+              iconTwo="images/bolsa.svg"
+            />
+
+            <div className="relative top-[-175px] sm:top-[175px]">
+              <CardReceta
+                image="images/receta4.png"
+                subTittle="Ensalada de papines con pesto de cilantro"
+                icon="images/reloj.svg"
+                text="24 min"
+                textTwo="8 ingredientes"
+                iconTwo="images/bolsa.svg"
+              />
+            </div>
+          </div>
+          <div className="flex justify-center relative bottom-[-200px] sm:top-[200px]">
+            <ButtonMenuSemana />
           </div>
         </section>
       </main>
