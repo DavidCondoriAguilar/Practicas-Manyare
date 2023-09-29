@@ -1,6 +1,5 @@
 import bgImage from "../../public/images/bgMangiare.png";
 import ButtonMangiare from "../components/buttons/ButtonMangiare";
-import ButtonMenuSemana from "../components/buttons/ButtonMenuSemana";
 import CardReceta from "../components/cards/CardReceta";
 import CardWhyM from "../components/cards/CardWhyM";
 import RoundedParrafo from "../components/rounded/RoundedParrafo";
@@ -75,11 +74,11 @@ export default function Layout() {
           />
         </section> */}
 
-        <section className="mx-auto h-[100%] sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
-          <div className="h-[665px] sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
+        <section className="mx-auto  sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
+          <div className=" sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
               <article className=" w-[436px] lg:grid-cols-[800px_2fr] flex items-center justify-center">
-                <img src="images/cart.png" alt="Cart" className="" />
+                <img src="images/food-box.png" alt="Cart" className="" />
               </article>
 
               <article className="">
@@ -110,16 +109,18 @@ export default function Layout() {
           </div>
         </section>
 
-        <section className="h-[720px] mx-auto container">
-          <div className="flex justify-center  ">
-            <h2 className="font-poppins font-bold text-[40px] text-[#161616]">
+        <section className=" mx-auto container">
+          <div className="flex justify-center  text-center">
+            <h2 className="font-poppins font-bold text-[24px] smn:text-[40px]  text-[#161616]">
               Recetas de la semana
             </h2>
           </div>
 
-          <div className="flex space-x-4 grid grid-cols-2 sm:grid-cols-4 mx-auto p-5">
+          <div className="  grid grid-cols-2 sm:grid-cols-4 p-5">
+
             <CardReceta
-              image="images/receta1.png"
+              number="1"
+              image="images/platos/plato1.png"
               subTittle="Ensalada de papines con pesto de cilantro"
               icon="images/reloj.svg"
               text="24 min"
@@ -127,19 +128,21 @@ export default function Layout() {
               iconTwo="images/bolsa.svg"
             />
 
-            <div className="relative top-[-275px] sm:top-[175px]">
+            <div className="relative top-[0px] sm:top-[175px]">
               <CardReceta
-                image="images/receta2.png"
-                subTittle="Ensalada de papines con pesto de cilantro"
-                icon="images/reloj.svg"
+                number="2"
+                image="images/platos/plato2.png"
+                subTittle="Pollo con reuccion de vino con tomates"
                 text="24 min"
                 textTwo="8 ingredientes"
+                icon="images/reloj.svg"
                 iconTwo="images/bolsa.svg"
               />
             </div>
 
             <CardReceta
-              image="images/receta3.png"
+              number="3"
+              image="images/platos/plato3.png"
               subTittle="Ensalada de papines con pesto de cilantro"
               icon="images/reloj.svg"
               text="24 min"
@@ -147,9 +150,10 @@ export default function Layout() {
               iconTwo="images/bolsa.svg"
             />
 
-            <div className="relative top-[-175px] sm:top-[175px]">
+            <div className="relative top-[0px] sm:top-[175px]">
               <CardReceta
-                image="images/receta4.png"
+                number="4"
+                image="images/platos/plato4.png"
                 subTittle="Ensalada de papines con pesto de cilantro"
                 icon="images/reloj.svg"
                 text="24 min"
@@ -158,9 +162,9 @@ export default function Layout() {
               />
             </div>
           </div>
-          <div className="flex justify-center relative bottom-[-200px] sm:top-[200px]">
+          {/* <div className="flex justify-center relative bottom-[-200px] sm:top-[200px]">
             <ButtonMenuSemana />
-          </div>
+          </div> */}
         </section>
       </main>
     </>
