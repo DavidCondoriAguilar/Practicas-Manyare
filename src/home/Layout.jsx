@@ -10,7 +10,7 @@ export default function Layout() {
       <main>
         <section>
           <div className="">
-            <img src={bgImage} alt="" />
+            <img className="h-[350px] sm:h-screen" src={bgImage} alt="" />
           </div>
           <div
             className="containerMain absolute bottom-[50%] sm:top-[50%] translate-y-[-50%]
@@ -27,7 +27,7 @@ export default function Layout() {
           ¿Por qué Mangiare?
         </h2>
 
-        <section className="containerWhyM mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5 py-[172px]">
+        <section className="containerWhyM mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2  py-[172px]">
           <article>
             <CardWhyM
               img="images/porqueMangiare1.svg"
@@ -74,9 +74,10 @@ export default function Layout() {
           />
         </section> */}
 
-        <section className="mx-auto  sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
+        <section className="  sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
           <div className=" sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
+              
               <article className=" w-[436px] lg:grid-cols-[800px_2fr] flex items-center justify-center">
                 <img src="images/food-box.png" alt="Cart" className="" />
               </article>
@@ -109,7 +110,7 @@ export default function Layout() {
           </div>
         </section>
 
-        <section className=" mx-auto container">
+        <section className=" mx-auto  ">
           <div className="flex justify-center  text-center">
             <h2 className="font-poppins font-bold text-[24px] smn:text-[40px]  text-[#161616]">
               Recetas de la semana

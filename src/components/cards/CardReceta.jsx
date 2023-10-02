@@ -9,7 +9,7 @@ export default function CardReceta({
   iconTwo,
 }) {
   return (
-    <div className="gap-4 ">
+    <div className=" p-4">
       <div className="h-[225px] w-[172px] ">
         <span className="text-[73px]  text-[#F3B12A] font-poppins font-bold ">
           {number}
@@ -21,11 +21,15 @@ export default function CardReceta({
         {subTittle}
       </h3>
 
-      <div className="flex">
-        <img src={icon} />
-        <span>{text}</span>
-        <span>{textTwo}</span>
-        <img src={iconTwo} />
+      <div className="flex space-x-4 ">
+        <div className="flex ">
+          <img src={icon} />
+          <p>{text}</p>
+        </div>
+        <div className="flex">
+          <p>{textTwo}</p>
+          <img src={iconTwo} />
+        </div>
       </div>
     </div>
   );
