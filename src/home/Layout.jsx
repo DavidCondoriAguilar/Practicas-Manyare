@@ -1,20 +1,26 @@
+import { useMediaQuery } from "react-responsive";
 import bgImage from "../../public/images/bgMangiare.png";
 import ButtonMangiare from "../components/buttons/ButtonMangiare";
 import CardReceta from "../components/cards/CardReceta";
 import CardWhyM from "../components/cards/CardWhyM";
+import RoundedImg from "../components/rounded/RoundedImg";
 import RoundedParrafo from "../components/rounded/RoundedParrafo";
 
 export default function Layout() {
+
+  const desktopMobile = useMediaQuery({
+    query: '(min-width:950px)'
+  })
   return (
     <>
       <main>
         <section>
           <div className="">
-            <img className="h-[350px] sm:h-screen" src={bgImage} alt="" />
+            <img className="h-[350px] sm:h-screen w-full "  src={bgImage} alt="" />
           </div>
           <div
             className="containerMain absolute bottom-[50%] sm:top-[50%] translate-y-[-50%]
-                      grid items-center justify-items-center gap-[75px] lg:h-[320px]"
+                      grid items-center justify-items-center gap-[2px] sm-gap-[75px] lg:h-[320px]"
           >
             <h1>
               ¡A mangiare con <br /> nuestras recetas!
@@ -23,7 +29,7 @@ export default function Layout() {
           </div>
         </section>
 
-        <h2 className="font-poppins text-[48px] font-bold text-center mt-5 ">
+        <h2 className="font-poppins text-[24px] sm:text-[48px] font-bold text-center mt-5 ">
           ¿Por qué Mangiare?
         </h2>
 
@@ -59,25 +65,67 @@ export default function Layout() {
           </article>
         </section>
 
-        {/* <section className=" text-[#fff] bg-[#7BB037] h-[1018px] relative">
-          <h3 className="font-poppins font-bold text-[48px] text-center">
-            ¿Qué contiene tu kit de comida?
-          </h3>
-          <p className="text-center font-poppins text-[25px] pb-[377px]">
-            Lorem impsum aqui ira una descripción no tan larga ideas aqui
-          </p>
-          <RoundedImg image="images/kitComida7.png" />
+        <section className="text-[#fff] bg-[#7BB037] ">
+          <div className="containerKitPrincipal ">
+            <h3 className="font-poppins font-bold text-[24px] sm:text-[48px] text-center ">
+              ¿Qué contiene tu kit de comida?
+            </h3>
+            <p className="text-center font-poppins text-[14px] sm:text-[25] ">
+              Lorem impsum aqui ira una descripción no tan larga ideas aqui
+            </p>
 
-          <img
-            className="absolute bottom-0 left-[220px]"
-            src="images/platoPrincipal.png"
-          />
-        </section> */}
+            <div className="relative pt-[377px] sm-">
 
-        <section className="  sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
+              {
+                desktopMobile?
+              <img className="mx-auto sm:w-[auto]" src="images/platoPrincipal.png" />
+                :
+              <img className="mx-auto relative w-auto  bottom-[177px]" src="images/platito.png" />
+              }
+
+              <div className="absolute top-[65%] left-[23%] sm:top-[50%] sm:left-[9%]  ">
+                <RoundedImg
+                  name="Cilantro"
+                  image="images/kit-comida/cilantro.png"
+                />
+              </div>
+              <div className="absolute top-[18%] sm:top-[80%] left-[20%] sm:left-[3%] ">
+                <RoundedImg
+                  name="Limones"
+                  image="images/kit-comida/limones.png"
+                />
+              </div>
+              <div className="absolute bottom-[33%] left-[-1%] sm:bottom-[53%] sm:left-[25%]">
+                <RoundedImg
+                  name="Albahaca"
+                  image="images/kit-comida/albaca.png"
+                />
+              </div>
+              <div className="absolute bottom-[63%] sm:bottom-[63%]  right-[10%] sm:right-[40%]">
+                <RoundedImg
+                  name="Papines"
+                  image="images/kit-comida/papines.png"
+                />
+              </div>
+              <div className="absolute bottom-[33%] sm:bottom-[50%] right-[25%] sm:right-[25%]">
+                <RoundedImg
+                  name="Piñobes"
+                  image="images/kit-comida/piñones.png"
+                />
+              </div>
+              <div className="absolute bottom-[13%] sm:bottom-[25%] left-[50%] sm:left-[85%]">
+                <RoundedImg name="Queso" image="images/kit-comida/queso.png" />
+              </div>
+              <div className="absolute bottom-[5%] right-[140%] sm:right-[3%]">
+                <RoundedImg name="Ajos" image="images/kit-comida/ajos.png" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
           <div className=" sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
-              
               <article className=" w-[436px] lg:grid-cols-[800px_2fr] flex items-center justify-center">
                 <img src="images/food-box.png" alt="Cart" className="" />
               </article>
@@ -111,14 +159,14 @@ export default function Layout() {
         </section>
 
         <section className=" mx-auto  ">
-          <div className="flex justify-center  text-center">
-            <h2 className="font-poppins font-bold text-[24px] smn:text-[40px]  text-[#161616]">
+          <div className="flex justify-center  text-center mt-4">
+            <h2 className="font-poppins font-bold 
+                          text-[24px] smn:text-[40px]  text-[#161616]">
               Recetas de la semana
             </h2>
           </div>
 
           <div className="  grid grid-cols-2 sm:grid-cols-4 p-5">
-
             <CardReceta
               number="1"
               image="images/platos/plato1.png"

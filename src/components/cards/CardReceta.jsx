@@ -9,26 +9,36 @@ export default function CardReceta({
   iconTwo,
 }) {
   return (
-    <div className=" p-4">
-      <div className="h-[225px] w-[172px] ">
-        <span className="text-[73px]  text-[#F3B12A] font-poppins font-bold ">
+    <div className=" ">
+      <div className="h-[140px] sm:h-[225px] w-[172px] ">
+        <p
+          className=" text-[#F3B12A] text-[73px] sm:text-[120px]
+         font-poppins font-bold "
+        >
           {number}
-        </span>
-        <img className=" relative bottom-[73px] right-[2px]" src={image} />
+        </p>
+        <img
+          className="relative left-[15px] sm:left-[40px] sm:bottom-[140px] bottom-[80px]  w-[110px] sm:w-[180px] "
+          src={image}
+        />
       </div>
 
-      <h3 className="font-poppins font-semibold text-[16px] sm:text-[21px]">
+      <h3 className="sm:w-[232px] w-[167px] font-poppins font-semibold text-[16px] sm:text-[21px] height-[150px] sm:h-auto">
         {subTittle}
       </h3>
 
       <div className="flex space-x-4 ">
-        <div className="flex ">
+        <div className="flex gap-[4px]">
           <img src={icon} />
-          <p>{text}</p>
+          <p className="text-[14px] sm:text-[16px]">
+            {text}
+          </p>
         </div>
-        <div className="flex">
-          <p>{textTwo}</p>
-          <img src={iconTwo} />
+        <div className="flex gap-[4px]">
+          <p className="text-[14px] sm:text-[16px] font-lato">
+            {textTwo}
+          </p>
+          <img src={iconTwo}/>
         </div>
       </div>
     </div>
