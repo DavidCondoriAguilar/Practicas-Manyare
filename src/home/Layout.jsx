@@ -1,25 +1,61 @@
 import { useMediaQuery } from "react-responsive";
 import bgImage from "../../public/images/bgMangiare.png";
 import ButtonMangiare from "../components/buttons/ButtonMangiare";
-import CardReceta from "../components/cards/CardReceta";
 import CardWhyM from "../components/cards/CardWhyM";
 import RoundedImg from "../components/rounded/RoundedImg";
-import RoundedParrafo from "../components/rounded/RoundedParrafo";
+import ButtonNav from "../components/buttons/ButtonNav";
+import ButtonRegister from "../components/buttons/ButtonRegister";
 
 export default function Layout() {
 
   const desktopMobile = useMediaQuery({
+    query: '(min-width:1280px)'
+  })
+
+  const desktopNavbar = useMediaQuery({
     query: '(min-width:950px)'
   })
+
+
   return (
     <>
+      <header className="flex items-center justify-center w-full h-[77px] sm:h-[80px]">
+        <nav className="flex items-center justify-between w-full px-[3%] max-w-[1200px] mx-auto">
+          <div className="flex gap-[15px] w-[134px] sm:w-[259.2px]">
+            <img
+              className="w-[62px] sm:w-[96px]"
+              src="public/images/logo.png"
+            />
+            <img src="public/images/mangiare.png" />
+          </div>
+
+          <div>
+            {desktopNavbar ? (
+              <div className="flex items-center gap-[25px]">
+                <p className="text-[16px] text-[#000] font-bold font-poppins">
+                  Menú comida
+                </p>
+                <p className="text-[16px] text-[#000] font-bold font-poppins">
+                  Blogs
+                </p>
+                <ButtonNav />
+                <ButtonRegister />
+              </div>
+            ) : (
+              //burger
+              <div className="text-[50px]">☣️</div>
+            )}
+          </div>
+        </nav>
+      </header>
+
       <main>
         <section>
           <div className="">
-            <img className="h-[350px] sm:h-screen w-full "  src={bgImage} alt="" />
+            <img className="h-[350px] sm:h-screen w-full " src={bgImage} />
           </div>
           <div
-            className="containerMain absolute bottom-[50%] sm:top-[50%] translate-y-[-50%]
+            className="containerMain absolute bottom-[30%] sm:top-[50%] translate-y-[-50%]
                       grid items-center justify-items-center gap-[2px] sm-gap-[75px] lg:h-[320px]"
           >
             <h1>
@@ -75,93 +111,78 @@ export default function Layout() {
             </p>
 
             <div className="relative pt-[377px] sm-">
+              {desktopMobile ? (
+                <img
+                  className="mx-auto sm:w-[auto]"
+                  src="images/platoPrincipal.png"
+                />
+              ) : (
+                <img
+                  className="mx-auto relative w-auto  bottom-[177px]"
+                  src="images/platito.png"
+                />
+              )}
 
-              {
-                desktopMobile?
-              <img className="mx-auto sm:w-[auto]" src="images/platoPrincipal.png" />
-                :
-              <img className="mx-auto relative w-auto  bottom-[177px]" src="images/platito.png" />
-              }
-
-              <div className="absolute top-[65%] left-[23%] sm:top-[50%] sm:left-[9%]  ">
+              <div 
+                className="absolute top-[68%] left-[23%]
+                   xl:top-[50%] xl:left-[9%] ">
                 <RoundedImg
                   name="Cilantro"
                   image="images/kit-comida/cilantro.png"
                 />
               </div>
-              <div className="absolute top-[18%] sm:top-[80%] left-[20%] sm:left-[3%] ">
+              <div 
+                className="absolute top-[18%] left-[16%]
+                   xl:top-[80%] xl:left-[3%] ">
                 <RoundedImg
                   name="Limones"
                   image="images/kit-comida/limones.png"
                 />
               </div>
-              <div className="absolute bottom-[33%] left-[-1%] sm:bottom-[53%] sm:left-[25%]">
+              <div 
+                className="absolute bottom-[33%] left-[1%]
+                xl:bottom-[53%] xl:left-[22%]">
                 <RoundedImg
                   name="Albahaca"
                   image="images/kit-comida/albaca.png"
                 />
               </div>
-              <div className="absolute bottom-[63%] sm:bottom-[63%]  right-[10%] sm:right-[40%]">
+              <div 
+                className="absolute bottom-[63%] right-[10%]
+                xl:bottom-[63%] xl:right-[40%]">
                 <RoundedImg
                   name="Papines"
                   image="images/kit-comida/papines.png"
                 />
               </div>
-              <div className="absolute bottom-[33%] sm:bottom-[50%] right-[25%] sm:right-[25%]">
+              <div 
+                className="absolute  right-[1%] bottom-[33%] 
+                xl:bottom-[50%] xl:right-[25%]
+                ">
                 <RoundedImg
                   name="Piñobes"
                   image="images/kit-comida/piñones.png"
                 />
               </div>
-              <div className="absolute bottom-[13%] sm:bottom-[25%] left-[50%] sm:left-[85%]">
+              <div 
+                className="absolute  left-[54%] bottom-[12%]
+                xl:left-[85%] xl:bottom-[25%] ">
                 <RoundedImg name="Queso" image="images/kit-comida/queso.png" />
               </div>
-              <div className="absolute bottom-[5%] right-[140%] sm:right-[3%]">
+              <div 
+                className="absolute bottom-[5%] right-[140%] xl:right-[3%]">
                 <RoundedImg name="Ajos" image="images/kit-comida/ajos.png" />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="sm:h-[735px] w-[414px] sm:w-auto bg-[#FBC63E] flex items-center justify-center">
-          <div className=" sm:h-[504px] w-[382px] sm:w-[1157px]  container flex items-center justify-center bg-[#fff]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 ">
-              <article className=" w-[436px] lg:grid-cols-[800px_2fr] flex items-center justify-center">
-                <img src="images/food-box.png" alt="Cart" className="" />
-              </article>
-
-              <article className="">
-                <h2
-                  className="
-                  font-bold font-poppins text-[#1B1713] text-center text-[24px]"
-                >
-                  ¿Cómo llegará tu pedido?
-                </h2>
-                <RoundedParrafo
-                  img="images/number1.svg"
-                  text="Los envíos se entregan los días domingos por parte de nuestro personal."
-                />
-                <RoundedParrafo
-                  img="images/number2.svg"
-                  text="Los ingredientes se entregarán pre-cortados según la cantidad de porciones escogidas a la hora de comprar."
-                />
-                <RoundedParrafo
-                  img="images/number3.svg"
-                  text="Todos los ingredientes enviados estarán 100% frescos."
-                />
-                <RoundedParrafo
-                  img="images/number4.svg"
-                  text="Los envíos se entregan los días domingos por parte de nuestro personal."
-                />
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className=" mx-auto  ">
+        {/* <section className=" mx-auto  ">
           <div className="flex justify-center  text-center mt-4">
-            <h2 className="font-poppins font-bold 
-                          text-[24px] smn:text-[40px]  text-[#161616]">
+            <h2
+              className="font-poppins font-bold 
+                          text-[24px] smn:text-[40px]  text-[#161616]"
+            >
               Recetas de la semana
             </h2>
           </div>
@@ -211,10 +232,10 @@ export default function Layout() {
               />
             </div>
           </div>
-          {/* <div className="flex justify-center relative bottom-[-200px] sm:top-[200px]">
+          <div className="flex justify-center  align-bottom mt-[16%] py-[3%]">
             <ButtonMenuSemana />
-          </div> */}
-        </section>
+          </div>
+        </section> */}
       </main>
     </>
   );

@@ -9,6 +9,9 @@ export default {
       },
       colors: {
         'rosaB':'#FF0062',
+      },
+      screens: {
+        "lgAux": '950px',
       }
     },
   },
